@@ -3,13 +3,14 @@ import { DashboardClient } from "@/components/DashboardClient"
 import { ChatBot } from "@/components/ChatBot"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
+import { ExpenseRecord } from "@/types"
 
 export const revalidate = 300 // 5분마다 재검증
 
 export default async function Home() {
   // Google Sheets에서 데이터 가져오기
-  let expenses = []
-  let error = null
+  let expenses: ExpenseRecord[] = []
+  let error: string | null = null
 
   try {
     expenses = await fetchExpenseData()

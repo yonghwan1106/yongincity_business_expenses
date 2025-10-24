@@ -91,7 +91,7 @@ export function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
                 fill: '#1e40af',
                 fontSize: 12,
                 fontWeight: 600,
-                formatter: (value: number) => `${value.toLocaleString()}만원`
+                formatter: (value: any) => `${value.toLocaleString()}만원`
               }}
             >
               {chartData.map((entry, index) => (

@@ -30,7 +30,7 @@ export function CategoryPieChart({ data }: CategoryPieChartProps) {
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={({ name, 비율 }) => `${name} (${비율.toFixed(1)}%)`}
+            label={({ name, 비율 }: any) => `${name} (${비율.toFixed(1)}%)`}
             outerRadius={120}
             fill="#8884d8"
             dataKey="value"

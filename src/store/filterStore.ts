@@ -84,7 +84,7 @@ export const useFilterStore = create<FilterState>((set, get) => ({
         const matchesSearch =
           record.사용장소.toLowerCase().includes(searchLower) ||
           record.집행목적.toLowerCase().includes(searchLower) ||
-          record.비고.toLowerCase().includes(searchLower)
+          (record.비고?.toLowerCase().includes(searchLower) ?? false)
 
         if (!matchesSearch) return false
       }

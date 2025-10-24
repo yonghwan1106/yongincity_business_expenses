@@ -66,7 +66,7 @@ export function SunburstChart({ data }: SunburstChartProps) {
           cy="50%"
           innerRadius={0}
           outerRadius={80}
-          label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+          label={({ name, percent }: any) => `${name} ${(percent * 100).toFixed(0)}%`}
         >
           {innerData.map((entry, index) => (
             <Cell key={`inner-${index}`} fill={INNER_COLORS[index % INNER_COLORS.length]} />
@@ -82,7 +82,7 @@ export function SunburstChart({ data }: SunburstChartProps) {
           cy="50%"
           innerRadius={90}
           outerRadius={140}
-          label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+          label={({ name, percent }: any) => `${name} ${(percent * 100).toFixed(0)}%`}
         >
           {outerData.map((entry, index) => (
             <Cell key={`outer-${index}`} fill={OUTER_COLORS[index % OUTER_COLORS.length]} />
