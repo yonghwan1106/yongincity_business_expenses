@@ -9,8 +9,8 @@ interface ExpenseTableProps {
 
 export function ExpenseTable({ data }: ExpenseTableProps) {
   const [currentPage, setCurrentPage] = useState(1)
-  const [sortKey, setSortKey] = useState<keyof ExpenseRecord>('번호')
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
+  const [sortKey, setSortKey] = useState<keyof ExpenseRecord>('사용일시')
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
   const itemsPerPage = 20
 
   // 정렬
