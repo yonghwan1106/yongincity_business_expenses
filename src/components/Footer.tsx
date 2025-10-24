@@ -30,28 +30,28 @@ export function Footer() {
             <h3 className="text-lg font-bold text-white mb-4">연락처</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-blue-400 mt-0.5" />
+                <Building2 className="w-5 h-5 text-blue-400 mt-0.5" />
                 <div className="text-sm">
-                  <p className="font-semibold text-gray-200">용인시청</p>
-                  <p className="text-gray-400">경기도 용인시 처인구 삼남로 77</p>
+                  <p className="font-semibold text-gray-200">용인블루</p>
+                  <p className="text-gray-400">대표: 박용환</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-400" />
                 <div className="text-sm">
-                  <p className="text-gray-400">대표전화: 031-324-2114</p>
+                  <p className="text-gray-400">연락처: 010-7939-3123</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-400" />
                 <div className="text-sm">
                   <a
-                    href="https://www.yongin.go.kr"
+                    href="https://github.com/yonghwan1106/yongincity_business_expenses"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-400 hover:text-blue-300 transition-colors"
                   >
-                    www.yongin.go.kr
+                    GitHub Repository
                   </a>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-500">
-              © 2024 용인블루. 데이터 출처: 용인특례시청
+              © 2025 용인블루. 데이터 출처: 용인특례시청
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-500">
               <span>시민과 함께 만드는 투명한 용인</span>
