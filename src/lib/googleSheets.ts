@@ -116,3 +116,53 @@ export function groupByCategory(data: ExpenseRecord[]) {
     비율: (item.금액 / total) * 100
   }))
 }
+
+/**
+ * 사용장소별 데이터 그룹화 (상위 N개)
+ */
+export function groupByLocation(data: ExpenseRecord[], topN: number = 10) {
+  const grouped = data.reduce((acc, record) => {
+    const location = record.사용장소 || '기타'
+
+    if (!acc[location]) {
+      acc[location] = {
+        location,
+        금액: 0,
+        건수: 0,
+      }
+    }
+
+    acc[location].금액 += record.사용금액
+    acc[location].건수++
+
+    return acc
+  }, {} as Record<string, any>)
+
+  return Object.values(grouped)
+    .sort((a: any, b: any) => b.금액 - a.금액)
+    .slice(0, topN)
+}
+
+/**
+ * 결제방법별 데이터 그룹화
+ */
+export function groupByPaymentMethod(data: ExpenseRecord[]) {
+  const grouped = data.reduce((acc, record) => {
+    const method = record.결제방법 || '기타'
+
+    if (!acc[method]) {
+      acc[method] = {
+        method,
+        금액: 0,
+        건수: 0,
+      }
+    }
+
+    acc[method].금액 += record.사용금액
+    acc[method].건수++
+
+    return acc
+  }, {} as Record<string, any>)
+
+  return Object.values(grouped).sort((a: any, b: any) => b.금액 - a.금액)
+}
