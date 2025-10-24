@@ -13,8 +13,20 @@ export function ExpenseTable({ data }: ExpenseTableProps) {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
   const itemsPerPage = 20
 
+  // 날짜순으로 정렬하여 새로운 번호 부여 (2024-09부터 시작하여 1번부터 매김)
+  // 먼저 날짜순으로 오름차순 정렬 (오래된 것부터)
+  const sortedByDate = [...data].sort((a, b) =>
+    a.사용일시.localeCompare(b.사용일시)
+  )
+
+  // 새로운 번호를 1번부터 부여
+  const dataWithCorrectNumbers = sortedByDate.map((record, index) => ({
+    ...record,
+    번호: index + 1 // 1번부터 시작
+  }))
+
   // 정렬
-  const sortedData = [...data].sort((a, b) => {
+  const sortedData = [...dataWithCorrectNumbers].sort((a, b) => {
     const aVal = a[sortKey]
     const bVal = b[sortKey]
 
