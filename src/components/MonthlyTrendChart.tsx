@@ -48,7 +48,7 @@ export function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
       <div className="text-right mb-4">
         <span className="text-sm text-gray-600">총 집행액: </span>
         <span className="text-xl font-bold text-blue-600">
-          {Math.round(totalAmount / 100000000).toLocaleString()}억원
+          {(totalAmount / 100000000).toFixed(1)}억원
         </span>
       </div>
 
