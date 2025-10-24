@@ -37,12 +37,12 @@ export function Header() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-2">
-              <span className="font-semibold">🏛️ 용인특례시</span>
+              <span className="font-semibold">🏛️ 용인블루</span>
               <span className="text-blue-200">|</span>
-              <span className="text-blue-100">시민과 함께하는 투명한 행정</span>
+              <span className="text-blue-100">시민이 만드는 투명한 행정 모니터링</span>
             </div>
             <div className="text-blue-100">
-              실시간 업데이트 | 데이터 출처: 용인시청
+              데이터 출처: 용인특례시청 | 제작: 용인블루
             </div>
           </div>
         </div>

@@ -8,20 +8,20 @@ export function Footer() {
       {/* 주요 정보 */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* 용인시 정보 */}
+          {/* 용인블루 정보 */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Building2 className="w-6 h-6 text-blue-400" />
-              <h3 className="text-xl font-bold text-white">용인특례시</h3>
+              <span className="text-2xl">🏛️</span>
+              <h3 className="text-xl font-bold text-white">용인블루</h3>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              시민과 함께하는 투명한 행정을 실천합니다.
-              용인시장 업무추진비 사용 내역을 실시간으로 공개하여
-              시민의 알 권리를 보장합니다.
+              용인시민이 만드는 투명한 행정 모니터링 플랫폼입니다.
+              용인시가 공개한 업무추진비 데이터를 시민의 눈높이에서
+              쉽게 이해하고 분석할 수 있도록 가공하여 제공합니다.
             </p>
-            <div className="flex items-center gap-2 text-blue-400 font-semibold">
-              <span className="text-2xl">🏛️</span>
-              <span>용인블루</span>
+            <div className="text-xs text-gray-500 border-l-2 border-blue-500 pl-3">
+              <p>데이터 출처: 용인특례시청</p>
+              <p>제작: 용인블루 시민단체</p>
             </div>
           </div>
 
@@ -100,15 +100,20 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-500">
-              © 2024 용인특례시. All rights reserved.
+              © 2024 용인블루. 데이터 출처: 용인특례시청
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-500">
-              <span>투명한 행정, 신뢰받는 용인</span>
+              <span>시민과 함께 만드는 투명한 용인</span>
               <span>|</span>
-              <span className="flex items-center gap-1">
+              <a
+                href="https://github.com/yonghwan1106/yongincity_business_expenses"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-blue-400 transition-colors"
+              >
                 <Github className="w-4 h-4" />
                 Open Source
-              </span>
+              </a>
             </div>
           </div>
         </div>

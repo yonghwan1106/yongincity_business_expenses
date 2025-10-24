@@ -12,12 +12,21 @@ export default function AboutPage() {
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-white mb-12 shadow-xl">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold mb-4">
-              투명성 모니터링 시스템 소개
+              용인블루 투명성 모니터링 시스템
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed">
-              용인특례시는 시민과 함께하는 투명한 행정을 실천하기 위해
-              업무추진비 사용 내역을 실시간으로 공개합니다.
+            <p className="text-xl text-blue-100 leading-relaxed mb-4">
+              용인시민단체 '용인블루'가 만드는 시민 중심 행정 모니터링 플랫폼입니다.
+              용인특례시가 공개한 업무추진비 데이터를 누구나 쉽게 이해할 수 있도록
+              시각화하고 분석하여 제공합니다.
             </p>
+            <div className="text-sm bg-blue-700/50 rounded-lg p-4 border border-blue-400/30">
+              <p className="font-semibold mb-1">📋 데이터 출처 및 면책사항</p>
+              <p className="text-blue-100 text-xs leading-relaxed">
+                본 시스템의 모든 데이터는 용인특례시청에서 공식 공개한 자료를 기반으로 합니다.
+                데이터 가공 및 시각화는 용인블루 시민단체에서 수행하였으며,
+                원본 데이터의 정확성에 대한 책임은 용인특례시청에 있습니다.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -145,24 +154,33 @@ export default function AboutPage() {
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-white text-center shadow-xl">
           <div className="max-w-2xl mx-auto">
             <div className="text-6xl mb-4">🏛️</div>
-            <h2 className="text-3xl font-bold mb-4">용인블루</h2>
+            <h2 className="text-3xl font-bold mb-4">용인블루 시민단체</h2>
             <p className="text-xl text-blue-100 leading-relaxed mb-6">
-              용인특례시의 상징 색상인 블루는 투명성, 신뢰, 혁신을 의미합니다.
-              우리는 용인블루 정신으로 시민과 함께하는 열린 행정을 실천합니다.
+              용인블루는 투명하고 열린 행정을 추구하는 시민단체입니다.
+              시민의 눈높이에서 공공 데이터를 가공하고 분석하여,
+              누구나 쉽게 이해할 수 있는 형태로 제공합니다.
             </p>
-            <div className="flex items-center justify-center gap-8 text-sm">
+            <div className="flex items-center justify-center gap-8 text-sm mb-6">
               <div>
                 <Users className="w-8 h-8 mx-auto mb-2" />
-                <p>시민 참여</p>
+                <p>시민 주도</p>
               </div>
               <div>
                 <Shield className="w-8 h-8 mx-auto mb-2" />
-                <p>투명한 행정</p>
+                <p>투명성 모니터링</p>
               </div>
               <div>
                 <Heart className="w-8 h-8 mx-auto mb-2" />
-                <p>신뢰받는 정부</p>
+                <p>열린 시민사회</p>
               </div>
+            </div>
+            <div className="text-sm bg-blue-700/50 rounded-lg p-4 border border-blue-400/30 text-left">
+              <p className="font-semibold mb-2">💡 오픈소스 프로젝트</p>
+              <p className="text-blue-100 text-xs leading-relaxed">
+                이 프로젝트는 GitHub에 오픈소스로 공개되어 있습니다.
+                누구나 코드를 확인하고, 개선 제안을 할 수 있습니다.
+                투명한 행정 모니터링의 시작은 투명한 기술로부터 시작됩니다.
+              </p>
             </div>
           </div>
         </div>

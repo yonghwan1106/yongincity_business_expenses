@@ -38,8 +38,11 @@ export function InsightsSection({ data }: InsightsSectionProps) {
     ? ((latestMonthData.건수 - previousMonthData.건수) / previousMonthData.건수) * 100
     : 0
 
-  // 최다 사용처
-  const locationStats = data.reduce((acc, record) => {
+  // 이번 달 데이터만 필터링
+  const currentMonthRecords = latestMonthData.records
+
+  // 최다 사용처 (이번 달 기준)
+  const locationStats = currentMonthRecords.reduce((acc, record) => {
     const location = record.사용장소
     if (!acc[location]) {
       acc[location] = { 금액: 0, 건수: 0 }
@@ -52,17 +55,32 @@ export function InsightsSection({ data }: InsightsSectionProps) {
   const topLocation = Object.entries(locationStats)
     .sort(([, a], [, b]) => b.건수 - a.건수)[0]
 
-  // 최대 단일 집행
-  const maxExpense = data.reduce((max, record) =>
+  // 최대 단일 집행 (이번 달 기준)
+  const maxExpense = currentMonthRecords.reduce((max, record) =>
     record.사용금액 > max.사용금액 ? record : max
-  , data[0])
+  , currentMonthRecords[0])
 
   // 평균 대비 이상치 탐지
   const avgAmount = data.reduce((sum, exp) => sum + exp.사용금액, 0) / data.length
   const highValueExpenses = data.filter(exp => exp.사용금액 > avgAmount * 2).length
 
-  // 전체 통계
+  // 전체 기간 통계 (시민 질문용)
   const totalAmount = data.reduce((sum, exp) => sum + exp.사용금액, 0)
+
+  // 전체 기간 최다 사용처
+  const allTimeLocationStats = data.reduce((acc, record) => {
+    const location = record.사용장소
+    if (!acc[location]) {
+      acc[location] = { 금액: 0, 건수: 0 }
+    }
+    acc[location].금액 += record.사용금액
+    acc[location].건수++
+    return acc
+  }, {} as Record<string, { 금액: number; 건수: number }>)
+
+  const allTimeTopLocation = Object.entries(allTimeLocationStats)
+    .sort(([, a], [, b]) => b.건수 - a.건수)[0]
+
   const categoryStats = data.reduce((acc, record) => {
     const category = record.비목
     if (!acc[category]) {
@@ -152,10 +170,10 @@ export function InsightsSection({ data }: InsightsSectionProps) {
           </h3>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <p className="font-semibold text-gray-800 mb-1">Q. 가장 많이 쓰이는 사용처는?</p>
+              <p className="font-semibold text-gray-800 mb-1">Q. 가장 많이 쓰이는 사용처는? (전체 기간)</p>
               <p className="text-gray-600 text-sm">
-                A. <strong>{topLocation[0]}</strong>에서 {topLocation[1].건수}회, 총{' '}
-                {topLocation[1].금액.toLocaleString()}원 사용
+                A. <strong>{allTimeTopLocation[0]}</strong>에서 {allTimeTopLocation[1].건수}회, 총{' '}
+                {allTimeTopLocation[1].금액.toLocaleString()}원 사용
               </p>
             </div>
 
@@ -168,7 +186,7 @@ export function InsightsSection({ data }: InsightsSectionProps) {
             </div>
 
             <div className="border-l-4 border-purple-500 pl-4">
-              <p className="font-semibold text-gray-800 mb-1">Q. 기관운영비 vs 시책추진비 비율은?</p>
+              <p className="font-semibold text-gray-800 mb-1">Q. 기관운영비 vs 시책추진비 비율은? (전체 기간)</p>
               <p className="text-gray-600 text-sm">
                 A. {Object.entries(categoryStats).map(([cat, stats]) => (
                   <span key={cat}>
