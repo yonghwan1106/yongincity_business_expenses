@@ -79,6 +79,26 @@ export default async function Home() {
           </div>
         </div>
 
+        {/* 비교 페이지 안내 배너 */}
+        <Link href="/comparison">
+          <div className="mb-8 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-1">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="bg-white/20 p-3 rounded-lg">
+                  <BarChart3 className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-1">경기도 타 특례시와의 비교</h3>
+                  <p className="text-white/90">
+                    용인시장의 업무추진비가 수원시장, 고양시장 대비 얼마나 많이 사용되는지 확인하세요
+                  </p>
+                </div>
+              </div>
+              <div className="hidden md:block text-6xl">📊</div>
+            </div>
+          </div>
+        </Link>
+
         {error ? (
           <div className="bg-red-50 border border-red-200 rounded-lg p-6">
             <h3 className="text-red-800 font-semibold mb-2">데이터 로드 오류</h3>
