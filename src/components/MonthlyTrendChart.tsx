@@ -13,7 +13,7 @@ interface MonthlyTrendChartProps {
 export function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
   // 데이터 포맷팅
   const chartData = data.map(item => ({
-    month: item.month.substring(5) + '월', // YYYY-MM -> MM월
+    month: item.month, // YYYY-MM 형식 유지
     fullMonth: item.month, // 전체 날짜 (YYYY-MM)
     금액만원: Math.round(item.금액 / 10000), // 만원 단위로 변환
     금액원: item.금액,
@@ -46,7 +46,7 @@ export function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
     <div className="w-full">
       {/* 총 집행액 표시 */}
       <div className="text-right mb-4">
-        <span className="text-sm text-gray-600">총 집행액: </span>
+        <span className="text-sm text-gray-600">합계 </span>
         <span className="text-xl font-bold text-blue-600">
           {(totalAmount / 100000000).toFixed(1)}억원
         </span>
