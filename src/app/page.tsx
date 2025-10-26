@@ -5,7 +5,7 @@ import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { ExpenseRecord } from "@/types"
 import Link from "next/link"
-import { BarChart3 } from "lucide-react"
+import { BarChart3, AlertTriangle } from "lucide-react"
 
 export const revalidate = 300 // 5분마다 재검증
 
@@ -55,25 +55,29 @@ export default async function Home() {
 
       {/* 메인 콘텐츠 */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* 비교 페이지 안내 배너 */}
-        <Link href="/comparison">
-          <div className="mb-8 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-1">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="bg-white/20 p-3 rounded-lg">
-                  <BarChart3 className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-1">경기도 타 특례시와의 비교</h3>
-                  <p className="text-white/90">
-                    용인시장의 업무추진비가 수원시장, 고양시장 대비 얼마나 많이 사용되는지 확인하세요
-                  </p>
-                </div>
+        {/* 시범 테스트 경고 배너 */}
+        <div className="mb-6 bg-yellow-50 border-2 border-yellow-400 rounded-xl p-6">
+          <div className="flex items-start gap-4">
+            <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-lg font-bold text-yellow-900 mb-2">⚠️ 시범 테스트 버전 안내</h3>
+              <div className="text-yellow-800 space-y-1">
+                <p className="font-semibold">
+                  본 페이지는 현재 <strong className="text-yellow-900">시범 테스트 중</strong>입니다.
+                </p>
+                <p className="text-sm">
+                  • 일부 데이터가 실제와 다를 수 있으며, 정확성을 보장하지 않습니다.
+                </p>
+                <p className="text-sm">
+                  • 공식적인 데이터는 용인특례시청 홈페이지를 참고해주시기 바랍니다.
+                </p>
+                <p className="text-sm">
+                  • 데이터 오류 발견 시 피드백 부탁드립니다.
+                </p>
               </div>
-              <div className="hidden md:block text-6xl">📊</div>
             </div>
           </div>
-        </Link>
+        </div>
 
         {error ? (
           <div className="bg-red-50 border border-red-200 rounded-lg p-6">
