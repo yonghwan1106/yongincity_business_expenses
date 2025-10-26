@@ -176,7 +176,7 @@ export function DashboardClient({ initialData }: DashboardClientProps) {
       </div>
 
       {/* 추가 통계 카드 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-green-500">
           <div className="flex items-center justify-between">
             <div>
@@ -198,18 +198,6 @@ export function DashboardClient({ initialData }: DashboardClientProps) {
               </p>
             </div>
             <ArrowUpDown className="w-10 h-10 text-blue-500 opacity-80" />
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-purple-500">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600 mb-1">사용 장소</p>
-              <p className="text-2xl font-bold text-gray-900">
-                {locationData.length}곳
-              </p>
-            </div>
-            <MapPin className="w-10 h-10 text-purple-500 opacity-80" />
           </div>
         </div>
       </div>
