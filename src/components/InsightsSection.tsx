@@ -103,7 +103,7 @@ export function InsightsSection({ data }: InsightsSectionProps) {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* 총 집행액 */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
@@ -128,20 +128,6 @@ export function InsightsSection({ data }: InsightsSectionProps) {
                 <span>전월과 동일</span>
               )}
             </div>
-          </div>
-
-          {/* 최다 방문 장소 */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <MapPin className="w-4 h-4" />
-              <p className="text-sm opacity-90">최다 방문 장소</p>
-            </div>
-            <p className="text-xl font-bold mb-1 truncate" title={topLocation[0]}>
-              {topLocation[0]}
-            </p>
-            <p className="text-sm opacity-90">
-              {topLocation[1].건수}회 방문
-            </p>
           </div>
 
           {/* 최대 단일 집행 */}
@@ -169,14 +155,6 @@ export function InsightsSection({ data }: InsightsSectionProps) {
             시민이 궁금해하는 질문
           </h3>
           <div className="space-y-4">
-            <div className="border-l-4 border-blue-500 pl-4">
-              <p className="font-semibold text-gray-800 mb-1">Q. 가장 자주 방문한 장소는? (전체 기간)</p>
-              <p className="text-gray-600 text-sm">
-                A. <strong>{allTimeTopLocation[0]}</strong> - {allTimeTopLocation[1].건수}회 방문, 총{' '}
-                {allTimeTopLocation[1].금액.toLocaleString()}원 사용
-              </p>
-            </div>
-
             <div className="border-l-4 border-green-500 pl-4">
               <p className="font-semibold text-gray-800 mb-1">Q. 월평균 얼마나 집행되나요?</p>
               <p className="text-gray-600 text-sm">
