@@ -218,7 +218,7 @@ export function DashboardClient({ initialData }: DashboardClientProps) {
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
           <TrendingUp className="w-6 h-6 text-blue-600" />
-          월별 집행 내역 (2024.9 ~ 2025.9)
+          용인시장 업무추진비 월별 집행 내역 (2024.9 ~ 2025.9)
         </h2>
         <MonthlyTrendChart data={monthlyData} />
       </div>
