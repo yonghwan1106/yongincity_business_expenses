@@ -36,19 +36,19 @@ const yonginMonthly: MayorMonthlyData[] = [
 
 // 고양시장 데이터
 const goyangMonthly: MayorMonthlyData[] = [
-  { year: 2024, month: 9, amount: 13855010, yearMonth: '2024-09' },
-  { year: 2024, month: 10, amount: 17832230, yearMonth: '2024-10' },
-  { year: 2024, month: 11, amount: 16355420, yearMonth: '2024-11' },
-  { year: 2024, month: 12, amount: 9133550, yearMonth: '2024-12' },
-  { year: 2025, month: 1, amount: 10030580, yearMonth: '2025-01' },
-  { year: 2025, month: 2, amount: 8075460, yearMonth: '2025-02' },
-  { year: 2025, month: 3, amount: 7055200, yearMonth: '2025-03' },
-  { year: 2025, month: 4, amount: 6808720, yearMonth: '2025-04' },
-  { year: 2025, month: 5, amount: 9447020, yearMonth: '2025-05' },
-  { year: 2025, month: 6, amount: 11901700, yearMonth: '2025-06' },
-  { year: 2025, month: 7, amount: 5374100, yearMonth: '2025-07' },
-  { year: 2025, month: 8, amount: 4122800, yearMonth: '2025-08' },
-  { year: 2025, month: 9, amount: 3616850, yearMonth: '2025-09' },
+  { year: 2024, month: 9, amount: 16140430, yearMonth: '2024-09' },
+  { year: 2024, month: 10, amount: 18403150, yearMonth: '2024-10' },
+  { year: 2024, month: 11, amount: 18195820, yearMonth: '2024-11' },
+  { year: 2024, month: 12, amount: 11726550, yearMonth: '2024-12' },
+  { year: 2025, month: 1, amount: 11230480, yearMonth: '2025-01' },
+  { year: 2025, month: 2, amount: 9386020, yearMonth: '2025-02' },
+  { year: 2025, month: 3, amount: 9119680, yearMonth: '2025-03' },
+  { year: 2025, month: 4, amount: 9324120, yearMonth: '2025-04' },
+  { year: 2025, month: 5, amount: 9859000, yearMonth: '2025-05' },
+  { year: 2025, month: 6, amount: 12642360, yearMonth: '2025-06' },
+  { year: 2025, month: 7, amount: 6753300, yearMonth: '2025-07' },
+  { year: 2025, month: 8, amount: 5320360, yearMonth: '2025-08' },
+  { year: 2025, month: 9, amount: 4050250, yearMonth: '2025-09' },
 ]
 
 // 수원시장 데이터
