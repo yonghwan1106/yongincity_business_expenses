@@ -1,6 +1,6 @@
 'use client'
 
-import { Building2, Info } from 'lucide-react'
+import { Building2, Info, BarChart3 } from 'lucide-react'
 import Link from 'next/link'
 
 export function Header() {
@@ -21,6 +21,13 @@ export function Header() {
 
           {/* 네비게이션 */}
           <nav className="flex items-center gap-4">
+            <Link
+              href="/comparison"
+              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+            >
+              <BarChart3 className="w-4 h-4" />
+              <span className="font-medium">시장 비교</span>
+            </Link>
             <Link
               href="/about"
               className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
