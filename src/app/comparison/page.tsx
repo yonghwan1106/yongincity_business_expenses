@@ -49,30 +49,6 @@ export default function ComparisonPage() {
       </div>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* 시범 테스트 경고 배너 */}
-        <div className="mb-8 bg-yellow-50 border-2 border-yellow-400 rounded-xl p-6">
-          <div className="flex items-start gap-4">
-            <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-lg font-bold text-yellow-900 mb-2">⚠️ 시범 테스트 버전 안내</h3>
-              <div className="text-yellow-800 space-y-1">
-                <p className="font-semibold">
-                  본 비교 페이지는 현재 <strong className="text-yellow-900">시범 테스트 중</strong>이며, 일부 데이터가 실제와 다를 수 있습니다.
-                </p>
-                <p className="text-sm">
-                  • 수원시장, 고양시장 데이터는 공개된 PDF에서 추출한 것으로, 집계 오류가 있을 수 있습니다.
-                </p>
-                <p className="text-sm">
-                  • 정확한 데이터는 각 특례시청 홈페이지를 참고해주시기 바랍니다.
-                </p>
-                <p className="text-sm">
-                  • 본 페이지의 분석 내용은 참고용이며, 공식적인 비교 자료가 아닙니다.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* 심각성 분석 */}
         <section className="mb-12">
           <div className="bg-red-50 border-2 border-red-300 rounded-xl p-6">
