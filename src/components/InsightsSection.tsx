@@ -81,15 +81,18 @@ export function InsightsSection({ data }: InsightsSectionProps) {
   const allTimeTopLocation = Object.entries(allTimeLocationStats)
     .sort(([, a], [, b]) => b.건수 - a.건수)[0]
 
-  const categoryStats = data.reduce((acc, record) => {
-    const category = record.비목
-    if (!acc[category]) {
-      acc[category] = { 금액: 0, 건수: 0 }
-    }
-    acc[category].금액 += record.사용금액
-    acc[category].건수++
-    return acc
-  }, {} as Record<string, { 금액: number; 건수: number }>)
+  // 비목 통계는 2024년 1월 이후 데이터만 사용 (원본 데이터에 비목이 있는 구간)
+  const categoryStats = data
+    .filter(record => record.사용일시 >= '2024-01' && record.비목)
+    .reduce((acc, record) => {
+      const category = record.비목
+      if (!acc[category]) {
+        acc[category] = { 금액: 0, 건수: 0 }
+      }
+      acc[category].금액 += record.사용금액
+      acc[category].건수++
+      return acc
+    }, {} as Record<string, { 금액: number; 건수: number }>)
 
   return (
     <div className="space-y-6 mb-8">
@@ -169,7 +172,7 @@ export function InsightsSection({ data }: InsightsSectionProps) {
             </div>
 
             <div className="border-l-4 border-purple-500 pl-4">
-              <p className="font-semibold text-gray-800 mb-1">Q. 기관운영비 vs 시책추진비 비율은? (전체 기간)</p>
+              <p className="font-semibold text-gray-800 mb-1">Q. 기관운영비 vs 시책추진비 비율은? (2024년 1월부터)</p>
               <p className="text-gray-600 text-sm">
                 A. {Object.entries(categoryStats).map(([cat, stats]) => (
                   <span key={cat}>
