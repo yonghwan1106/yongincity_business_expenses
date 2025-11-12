@@ -22,7 +22,7 @@ export function CategoryPieChart({ data }: CategoryPieChartProps) {
   }))
 
   return (
-    <div className="w-full h-[400px]">
+    <div className="w-full h-[500px]">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -30,8 +30,13 @@ export function CategoryPieChart({ data }: CategoryPieChartProps) {
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={({ name, 비율 }: any) => `${name} (${비율.toFixed(1)}%)`}
-            outerRadius={120}
+            label={({ name, 비율, value }: any) => {
+              const 억원 = (value / 100000000).toFixed(1)
+              return `${name}
+${비율.toFixed(1)}%
+${억원}억원`
+            }}
+            outerRadius={150}
             fill="#8884d8"
             dataKey="value"
           >
