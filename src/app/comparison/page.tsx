@@ -35,14 +35,32 @@ export default function ComparisonPage() {
       <div className="bg-white shadow-md border-b-2 border-red-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-3">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
               경기도 타 특례시와의 업무추진비 비교
             </h1>
-            <p className="text-lg text-gray-600 mb-2">
+            <p className="text-lg text-gray-600 mb-4">
               용인시장 vs 수원시장 vs 고양시장
             </p>
-            <p className="text-sm text-gray-500">
-              분석 기간: 2024년 9월 ~ 2025년 9월 (13개월)
+
+            {/* 기간 강조 배너 */}
+            <div className="inline-block bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl px-8 py-4 shadow-lg">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="w-7 h-7 text-white" />
+                <div className="text-left">
+                  <p className="text-white text-sm font-medium mb-1">비교 분석 기간</p>
+                  <p className="text-white text-3xl font-bold">
+                    2024년 9월 ~ 2025년 9월
+                  </p>
+                  <p className="text-white/90 text-lg font-semibold mt-1">
+                    (13개월 한정)
+                  </p>
+                </div>
+                <AlertTriangle className="w-7 h-7 text-white" />
+              </div>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-4">
+              ※ 메인 페이지는 2022년 7월부터의 전체 기간을 다루며, 이 비교 페이지는 최근 13개월만 분석합니다.
             </p>
           </div>
         </div>
