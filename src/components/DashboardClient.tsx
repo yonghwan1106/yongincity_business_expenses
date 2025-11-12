@@ -229,10 +229,10 @@ export function DashboardClient({ initialData }: DashboardClientProps) {
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <FileText className="w-6 h-6 text-green-600" />
-            비목별 집행 현황
+            비목별 집행 현황 (2024년 1월부터)
           </h2>
           <p className="text-sm text-gray-600 mb-4">
-            기관운영비 vs 시책추진비 비율
+            기관운영비 vs 시책추진비 비율 (이전 데이터에는 비목 항목 없음)
           </p>
           <CategoryPieChart data={categoryData} />
         </div>
