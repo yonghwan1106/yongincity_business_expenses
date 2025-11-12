@@ -97,10 +97,9 @@ export function InsightsSection({ data }: InsightsSectionProps) {
       <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6 text-white shadow-xl">
         <div className="flex items-center gap-2 mb-4">
           <Award className="w-6 h-6" />
-          <h2 className="text-2xl font-bold">이달의 하이라이트</h2>
-          <span className="ml-auto bg-white/20 px-3 py-1 rounded-full text-sm">
-            {latestMonth.substring(0, 4)}년 {parseInt(latestMonth.substring(5, 7))}월
-          </span>
+          <h2 className="text-2xl font-bold">
+            이달의 하이라이트 (이달: {latestMonth.substring(0, 4)}년 {parseInt(latestMonth.substring(5, 7))}월)
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -143,6 +142,12 @@ export function InsightsSection({ data }: InsightsSectionProps) {
               {maxExpense.집행목적}
             </p>
           </div>
+        </div>
+
+        {/* 안내 및 출처 */}
+        <div className="mt-4 pt-4 border-t border-white/20 text-xs opacity-75 space-y-1">
+          <p>※ 업무추진비 자료는 익월 15일 이후에 업데이트 됩니다.</p>
+          <p>※ 출처: <a href="https://www.yongin.go.kr/user/bbs/BD_selectBbsList.do?q_bbsCode=1001&q_clCode=16" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">용인시 홈페이지 업무추진비 공개</a></p>
         </div>
       </div>
 
