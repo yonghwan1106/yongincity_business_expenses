@@ -1,4 +1,4 @@
-import { fetchExpenseData } from "@/lib/googleSheets"
+import { fetchExpenseDataFromCSV } from "@/lib/csvLoader"
 import { DashboardClient } from "@/components/DashboardClient"
 import { ChatBot } from "@/components/ChatBot"
 import { Header } from "@/components/Header"
@@ -10,12 +10,12 @@ import { BarChart3, AlertTriangle } from "lucide-react"
 export const revalidate = 300 // 5분마다 재검증
 
 export default async function Home() {
-  // Google Sheets에서 데이터 가져오기
+  // CSV 파일에서 전체 데이터 가져오기 (2022.7 ~ 2025.9)
   let expenses: ExpenseRecord[] = []
   let error: string | null = null
 
   try {
-    expenses = await fetchExpenseData()
+    expenses = await fetchExpenseDataFromCSV()
   } catch (e) {
     error = e instanceof Error ? e.message : '데이터를 가져올 수 없습니다'
     console.error('Error loading data:', e)
@@ -35,10 +35,10 @@ export default async function Home() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-1">
-                2024년 9월 ~ 2025년 9월 집행내역 분석
+                2022년 7월 ~ 2025년 9월 집행내역 분석
               </h2>
               <p className="text-sm text-gray-600">
-                총 {expenses.length.toLocaleString()}건의 집행 내역
+                총 {expenses.length.toLocaleString()}건의 집행 내역 (민선8기 전체)
               </p>
             </div>
             <div className="hidden md:block">
