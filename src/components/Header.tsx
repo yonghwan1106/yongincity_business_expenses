@@ -47,6 +47,8 @@ export function Header() {
               <span className="font-semibold">🏛️ 용인블루</span>
               <span className="text-blue-200">|</span>
               <span className="text-blue-100">시민이 만드는 투명한 행정 모니터링</span>
+              <span className="text-blue-200">|</span>
+              <span className="text-yellow-200 font-semibold">⚠️ 테스트 단계 (일부 내역은 실제와 차이가 있을 수 있습니다)</span>
             </div>
             <div className="text-blue-100">
               데이터 출처: 용인특례시청 | 제작: 용인블루

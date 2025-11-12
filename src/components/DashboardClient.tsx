@@ -144,7 +144,9 @@ export function DashboardClient({ initialData }: DashboardClientProps) {
   const avgAmount = totalCount > 0 ? totalAmount / totalCount : 0
 
   // 그룹화 데이터
-  const categoryData = groupByCategory(filteredExpenses)
+  // 비목별 데이터는 2024년 1월 이후만 사용 (원본 데이터에 비목이 있는 구간)
+  const expensesWithCategory = filteredExpenses.filter(exp => exp.사용일시 >= '2024-01' && exp.비목)
+  const categoryData = groupByCategory(expensesWithCategory)
   const locationData = groupByLocation(filteredExpenses, 10)
   const paymentData = groupByPaymentMethod(filteredExpenses)
 

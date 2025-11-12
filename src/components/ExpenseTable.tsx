@@ -119,11 +119,15 @@ export function ExpenseTable({ data }: ExpenseTableProps) {
                   </span>
                 </td>
                 <td className="px-3 py-3 text-center">
-                  <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                    record.비목 === '기관' ? 'bg-green-100 text-green-800' : 'bg-purple-100 text-purple-800'
-                  }`}>
-                    {record.비목}
-                  </span>
+                  {record.비목 ? (
+                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                      record.비목.includes('기관') ? 'bg-green-100 text-green-800' : 'bg-purple-100 text-purple-800'
+                    }`}>
+                      {record.비목.includes('기관') ? '기관' : '시책'}
+                    </span>
+                  ) : (
+                    <span className="text-gray-400 text-xs">-</span>
+                  )}
                 </td>
               </tr>
             ))}
