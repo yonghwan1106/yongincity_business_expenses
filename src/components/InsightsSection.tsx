@@ -174,12 +174,15 @@ export function InsightsSection({ data }: InsightsSectionProps) {
             <div className="border-l-4 border-purple-500 pl-4">
               <p className="font-semibold text-gray-800 mb-1">Q. 기관운영비 vs 시책추진비 비율은? (2024년 1월부터)</p>
               <p className="text-gray-600 text-sm">
-                A. {Object.entries(categoryStats).map(([cat, stats]) => (
-                  <span key={cat}>
-                    {cat}: <strong>{((stats.금액 / totalAmount) * 100).toFixed(1)}%</strong>
-                    {' '}
-                  </span>
-                ))}
+                A. {(() => {
+                  const categoryTotal = Object.values(categoryStats).reduce((sum, stats) => sum + stats.금액, 0)
+                  return Object.entries(categoryStats).map(([cat, stats]) => (
+                    <span key={cat}>
+                      {cat}: <strong>{categoryTotal > 0 ? ((stats.금액 / categoryTotal) * 100).toFixed(1) : '0.0'}%</strong>
+                      {' '}
+                    </span>
+                  ))
+                })()}
               </p>
             </div>
           </div>
