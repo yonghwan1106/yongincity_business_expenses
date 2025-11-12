@@ -116,8 +116,18 @@ interface DashboardClientProps {
 }
 
 export function DashboardClient({ initialData }: DashboardClientProps) {
-  // Get filtered data from the store
-  const applyFilters = useFilterStore(state => state.applyFilters)
+  // Get filtered data from the store - subscribe to all filter state changes
+  const {
+    dateFrom,
+    dateTo,
+    amountMin,
+    amountMax,
+    selectedCategories,
+    selectedPaymentMethods,
+    searchText,
+    applyFilters
+  } = useFilterStore()
+
   const filteredExpenses = applyFilters(initialData)
 
   // 기본 통계 계산 (필터된 데이터 기준)
