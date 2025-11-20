@@ -5,7 +5,7 @@ import { parse } from 'csv-parse/sync'
 
 /**
  * CSV 파일에서 업무추진비 데이터 로드
- * 2022.7.1 ~ 2025.9.30 전체 데이터
+ * 2022.7.1 ~ 2025.10.31 전체 데이터
  */
 export async function fetchExpenseDataFromCSV(): Promise<ExpenseRecord[]> {
   try {

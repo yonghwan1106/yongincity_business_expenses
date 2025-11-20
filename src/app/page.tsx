@@ -10,7 +10,7 @@ import { BarChart3, AlertTriangle } from "lucide-react"
 export const revalidate = 300 // 5분마다 재검증
 
 export default async function Home() {
-  // CSV 파일에서 전체 데이터 가져오기 (2022.7 ~ 2025.9)
+  // CSV 파일에서 전체 데이터 가져오기 (2022.7 ~ 2025.10)
   let expenses: ExpenseRecord[] = []
   let error: string | null = null
 
@@ -35,7 +35,7 @@ export default async function Home() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-1">
-                2022년 7월 ~ 2025년 9월 집행내역 분석 (39개월)
+                2022년 7월 ~ 2025년 10월 집행내역 분석 (40개월)
               </h2>
               <p className="text-sm text-gray-600">
                 총 {expenses.length.toLocaleString()}건의 집행 내역 (민선8기 전체)
